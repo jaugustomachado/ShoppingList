@@ -13,7 +13,7 @@ Create the database using MySQL -> In the script there is already the command fo
 
 SQL script folder: [Link](https://github.com/jaugustomachado/LiferayChallenge/blob/master/src/main/resources/scriptSQLDatabase.sql)
 
-Run the java program -> Link of the APP Class: https://github.com/jaugustomachado/LiferayChallenge/blob/master/src/main/java/augusto/sales/SalesApplication.java
+Run the java program -> APP Class (main): [LinK](https://github.com/jaugustomachado/LiferayChallenge/blob/master/src/main/java/augusto/sales/SalesApplication.java)
 
 Insert the items of the list as in the model : "1 book at 12.49" , to close the list just press enter at the end.
 
@@ -25,7 +25,7 @@ Ps:Regarding the import duty tax, only items that have in their descriptions the
 
 The entire list will be showed right after its closing, each line will contains the quantity ordered, description, corrected price multiplied by the quantity and at the end it will show the  total of taxes and the total of the purchase as well.
 
-<h1>Example of input:</h1>
+<h1>Example of Input:</h1>
 
 1 book at 12.49 <br />
 1 music CD at 14.99 <br />
@@ -33,14 +33,13 @@ The entire list will be showed right after its closing, each line will contains 
 
 <h1>Example of Output:</h1>
 
-Output 1:
 1 book: 12.49 <br />
 1 music CD: 16.49 <br />
 1 chocolate bar: 0.85 <br />
 Sales Taxes: 1.50 <br />
 Total: 29.83 <br />
 
-Features of the springboot aplication (ItemsDatabaseManagement):[LINK](https://github.com/jaugustomachado/LiferayChallenge/tree/master/src/main/java/augusto/sales/ItemsDatabaseManagement)
+Features of the springboot application (ItemsDatabaseManagement):[LINK](https://github.com/jaugustomachado/LiferayChallenge/tree/master/src/main/java/augusto/sales/ItemsDatabaseManagement)
 
 [X] - Search item by id <br />
 [X] - Search an item by description <br />
@@ -48,7 +47,7 @@ Features of the springboot aplication (ItemsDatabaseManagement):[LINK](https://g
 [X] - Update an item <br />
 [X] - Delete an item <br />
 
-Author
+<h1>Author</h1>
  
 * **José Augusto Machado Omena**: @jaugustomachado (https://github.com/jaugustomachado)
  
