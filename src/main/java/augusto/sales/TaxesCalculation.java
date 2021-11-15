@@ -9,18 +9,26 @@ import java.util.Scanner;
 public class TaxesCalculation {
 
     private final ItemsRepository itemsRepository;
+    
+    double basicSaleTax = 0.10;
+    double importDuty = 0.05;
+    double salesTaxes=0.00;
+    double total=0.00;
+    double updatedPrice;
+
+    public void roundAndUpdatePrice(Double tax, Double prices, int quantity){
+        salesTaxes=salesTaxes+ (Math.ceil(20.0 *
+        prices*(tax)) / 20.0)*quantity;
+
+        updatedPrice = ((Math.ceil(20.0 *
+        prices*(tax)) / 20.0)+ prices)*quantity;
+    }
 
     public TaxesCalculation(ItemsRepository itemsRepository) {
         this.itemsRepository = itemsRepository;
     }
 
     public void taxCalc(){
-
-        double basicSaleTax = 0.10;
-        double importDuty = 0.05;
-        double salesTaxes=0.00;
-        double total=0.00;
-        double updatedPrice;
 
         ArrayList<String> purchase = new ArrayList<>();
         ArrayList<Double> prices = new ArrayList<>();
@@ -65,17 +73,11 @@ public class TaxesCalculation {
 
                     if (purchase.get(i).toLowerCase().contains("imported")) {
 
-                        salesTaxes = salesTaxes + (Math.ceil(20.0 *
-                                prices.get(i) * (importDuty)) / 20.0) * quantity.get(i);
-
-                        updatedPrice = ((Math.ceil(20.0 *
-                                prices.get(i) * (importDuty)) / 20.0) + prices.get(i)) * quantity.get(i);
-
+                        roundAndUpdatePrice(importDuty,prices.get(i),quantity.get(i));
                         prices.set(i, updatedPrice);
 
                     } else {
-
-                        updatedPrice = prices.get(i) * quantity.get(i);
+                        roundAndUpdatePrice(0.0,prices.get(i),quantity.get(i));
                         prices.set(i, updatedPrice);
                     }
 
@@ -83,22 +85,12 @@ public class TaxesCalculation {
 
                     if(purchase.get(i).toLowerCase().contains("imported")){
 
-                        salesTaxes=salesTaxes+ (Math.ceil(20.0 *
-                                prices.get(i)*(basicSaleTax+importDuty)) / 20.0)*quantity.get(i);
-
-                        updatedPrice = ((Math.ceil(20.0 *
-                                prices.get(i)*(basicSaleTax+importDuty)) / 20.0)+ prices.get(i))*quantity.get(i);
-
+                        roundAndUpdatePrice(basicSaleTax+importDuty,prices.get(i),quantity.get(i));
                         prices.set(i, updatedPrice);
 
                     } else {
 
-                        salesTaxes=salesTaxes+ (Math.ceil(20.0 *
-                                prices.get(i)*(basicSaleTax)) / 20.0)*quantity.get(i);
-
-                        updatedPrice = ((Math.ceil(20.0 *
-                                prices.get(i)*(basicSaleTax)) / 20.0)+ prices.get(i))*quantity.get(i);
-
+                        roundAndUpdatePrice(basicSaleTax,prices.get(i),quantity.get(i));
                         prices.set(i, updatedPrice);
                     }
                 }
@@ -106,22 +98,12 @@ public class TaxesCalculation {
 
                 if(purchase.get(i).toLowerCase().contains("imported")){
 
-                    salesTaxes=salesTaxes+ (Math.ceil(20.0 *
-                            prices.get(i)*(basicSaleTax+importDuty)) / 20.0)*quantity.get(i);
-
-                    updatedPrice = ((Math.ceil(20.0 *
-                            prices.get(i)*(basicSaleTax+importDuty)) / 20.0)+ prices.get(i))*quantity.get(i);
-
+                    roundAndUpdatePrice(basicSaleTax+importDuty,prices.get(i),quantity.get(i));
                     prices.set(i, updatedPrice);
 
                 } else {
 
-                    salesTaxes=salesTaxes+ (Math.ceil(20.0 *
-                            prices.get(i)*(basicSaleTax)) / 20.0)*quantity.get(i);
-
-                    updatedPrice = ((Math.ceil(20.0 *
-                            prices.get(i)*(basicSaleTax)) / 20.0)+ prices.get(i))*quantity.get(i);
-
+                    roundAndUpdatePrice(basicSaleTax,prices.get(i),quantity.get(i));
                     prices.set(i, updatedPrice);
                 }
             }
