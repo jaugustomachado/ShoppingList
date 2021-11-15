@@ -2,7 +2,7 @@
 
 Status:Concluded
 
-Implementation of an API that manages a database with the necessary operations of a CRUD system (create, read, update, delete) to identify items and classify them according to their type (Ex: chocolate bar-food). In addition to the database, the API asks the user for the priced items and returns the value of each one corrected with the respective tax, as well as the total amount of taxes and the total sum of the shopping list.
+Implementation of an API that manages a database with the necessary operations of a CRUD system (create, read, update, delete) to identify items and classify them according to their type (Ex: chocolate bar -> food). In addition to the database, the API asks the user for the priced items and returns the value of each one corrected with the respective tax, as well as the total amount of taxes and the total sum of the shopping list.
 
 Technologies needed to run the program:
 JAVA / SQL (DATABASE)
@@ -13,7 +13,7 @@ Create the database using MySQL -> In the script there is already the command fo
 
 SQL script folder: [Link](https://github.com/jaugustomachado/LiferayChallenge/blob/master/src/main/resources/scriptSQLDatabase.sql)
 
-Run the java program -> APP Class (main): [LinK](https://github.com/jaugustomachado/LiferayChallenge/blob/master/src/main/java/augusto/sales/SalesApplication.java)
+Run the java program -> APP Class (main): [Link](https://github.com/jaugustomachado/LiferayChallenge/blob/master/src/main/java/augusto/sales/SalesApplication.java)
 
 Insert the items of the list as in the model : "1 book at 12.49" , to close the list just press enter at the end.
 
@@ -23,7 +23,7 @@ Ps:The program considers an item as food, book or medical products only if the i
 
 Ps:Regarding the import duty tax, only items that have in their descriptions the word "imported", will be taxed with it.
 
-The entire list will be showed right after its closing, each line will contains the quantity ordered, description, corrected price multiplied by the quantity and at the end it will show the  total of taxes and the total of the purchase as well.
+The entire list will be showed right after its closing, each line will contain the quantity ordered, description, corrected price multiplied by the quantity and at the end it will show the  total of taxes and the total of the purchase as well.
 
 <h1>Example of Input:</h1>
 
@@ -39,7 +39,7 @@ The entire list will be showed right after its closing, each line will contains 
 Sales Taxes: 1.50 <br />
 Total: 29.83 <br />
 
-Features of the springboot application (ItemsDatabaseManagement):[LINK](https://github.com/jaugustomachado/LiferayChallenge/tree/master/src/main/java/augusto/sales/ItemsDatabaseManagement)
+Features of the springboot application (ItemsDatabaseManagement):[Link](https://github.com/jaugustomachado/LiferayChallenge/tree/master/src/main/java/augusto/sales/ItemsDatabaseManagement)
 
 [X] - Search item by id <br />
 [X] - Search an item by description <br />
